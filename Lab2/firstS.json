@@ -1,0 +1,56 @@
+{
+    "number": "1",
+    "address": "Kuybisheva. 22",
+    "departments": [
+        {
+            "nameD": "Clothes",
+            "products": [
+                {
+                    "product": "1",
+                    "description": "2",
+                    "price": "1000"
+                },
+                {
+                    "product": "2",
+                    "description": "4",
+                    "price": "800"
+                },
+                {
+                    "product": "3",
+                    "description": "9",
+                    "price": "1200"
+                },
+                {
+                    "product": "4",
+                    "description": "16",
+                    "price": "500"
+                }
+            ]
+        },
+        {
+            "nameD": "Boots",
+            "products": [
+                {
+                    "product": "1",
+                    "description": "38",
+                    "price": "2000"
+                },
+                {
+                    "product": "2",
+                    "description": "44",
+                    "price": "10000"
+                },
+                {
+                    "product": "3",
+                    "description": "28",
+                    "price": "1800"
+                },
+                {
+                    "product": "4",
+                    "description": "42",
+                    "price": "3350"
+                }
+            ]
+        }
+    ]
+}
