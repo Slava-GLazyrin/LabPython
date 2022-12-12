@@ -1,4 +1,4 @@
-from product import Product
+﻿from product import Product
 from department import Department
 import json
 
@@ -17,7 +17,8 @@ class Store:
 
 def StoreSerialize(Store, path):
     with open(path, 'w') as outfile:
-        json.dump(Store.__dict__, outfile, indent=4)
+        json.dump(Store.__dict__, outfile, indent=4, ensure_ascii = False)
+        
 
 def StoreDeserialize(pas):
     def Decode(obj):

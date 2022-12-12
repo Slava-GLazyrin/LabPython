@@ -1,4 +1,4 @@
-from product import Product
+﻿from product import Product
 import json
 
 class Department:

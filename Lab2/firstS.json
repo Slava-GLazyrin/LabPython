@@ -1,9 +1,9 @@
-{
+﻿{
     "number": "1",
-    "address": "Kuybisheva. 22",
+    "address": "Куйбышева. 22",
     "departments": [
         {
-            "nameD": "Clothes",
+            "nameD": "Одежда",
             "products": [
                 {
                     "product": "1",
@@ -28,7 +28,7 @@
             ]
         },
         {
-            "nameD": "Boots",
+            "nameD": "Обувь",
             "products": [
                 {
                     "product": "1",

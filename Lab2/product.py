@@ -1,4 +1,4 @@
-import json;
+﻿import json;
 
 class Product:
     def __init__(self, product = "", description = "", price = 0):
