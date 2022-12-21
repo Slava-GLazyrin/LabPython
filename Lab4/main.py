@@ -1,4 +1,4 @@
-import csv
+﻿import csv
 import random
 FILENAME = "dataSet.csv" #имя изначального файла с данными
 OUTPUTFILE = "newDataSet.csv" #имя преобразованного файла с данными
@@ -29,7 +29,7 @@ def GenerateDataSet() -> list:
     count : int = 100
     Persons.append(["ФИО", "Часы работы"])
     while i < count:
-        randomFullName = Surnames[random.choice(Surnames)] + " " + Names[random.choice(Names)] + " "  + Patronymics[random.choice(Patronymics)]
+        randomFullName = Surnames[random.randint(0 , len(Surnames) - 1)] + " " + Names[random.randint(0 , len(Names) - 1)] + " "  + Patronymics[random.randint(0 , len(Patronymics) - 1)]
         Persons.append([randomFullName, random.randint(10, 350)])
         i += 1
     return Persons
@@ -57,7 +57,31 @@ def ReadFromCSV(fileName : str) -> list:
             resultListDict.append(dict);        
     return resultListDict
 
+def SplitFullNameFromDict(startList : dict) -> dict:
+    resultDict = dict()
+    strs = startList["ФИО"].split(' ')
+    resultDict["Фамилия"] = strs[0]
+    resultDict["Имя"] = strs[1]
+    resultDict["Отчество"] = strs[2]
+    resultDict["Часы работы"] = startList["Часы работы"]
+    return resultDict
 
+def GetSumFromDict(startList1 : dict, startList2 : dict) -> dict:
+    resultDict = dict()
+    resultDict["Часы работы"] = int(startList2["Часы работы"]) + int(startList1["Часы работы"]) 
+    return resultDict
+
+#Генерация изначального файла .csv
+WriteInCSVFromList(GenerateDataSet(), FILENAME)
+
+#ЗАДАЧА 1, разрезать столбец ФИО на отдельные столбцы с помощью map и записать в новый файл .csv
+dataSet : list = ReadFromCSV(FILENAME)
+newDataSet : list = newMap(SplitFullNameFromDict, dataSet)
+WriteInCSVFromDict(newDataSet, OUTPUTFILE)
+
+#ЗАДАЧА 2, подсчёт суммы с помощью reduce
+salarySumHoursWork = newReduce(GetSumFromDict, dataSet)["Часы работы"]
+print("Суммарное количество часов работы в файле: " + str(salarySumHoursWork))
 
 
 
