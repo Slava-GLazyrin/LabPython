@@ -48,7 +48,14 @@ def WriteInCSVFromDict(dataSet : list, fileName : str):
         writer.writeheader()
         writer.writerows(dataSet)
 
-
+#Чтение из .csv в виде списка словарей
+def ReadFromCSV(fileName : str) -> list:
+    with open(fileName, "r", newline="") as file:
+        reader = csv.DictReader(file)
+        resultListDict = list()
+        for dict in reader:
+            resultListDict.append(dict);        
+    return resultListDict
 
 
 
